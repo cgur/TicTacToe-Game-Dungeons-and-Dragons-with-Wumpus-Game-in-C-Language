@@ -160,7 +160,7 @@ void printBanner ( void )
 
 printf("\n*******************************************************************************\n");
 printf("* Dungeons and Dragons with Wumpuses                                          *\n");
-printf("* by %-72s *"                                                                    "\n" , AUTHOR);
+printf("* by %-70s *"                                                                    "\n" , AUTHOR);
 printf("*******************************************************************************\n");
 
 printf("\nLet's configure the DnDW World first!\n");
@@ -177,8 +177,8 @@ void configureWorld ( void )
 
 printf("Enter number of magical rooms [%d,%d] : ",MIN_ROOMS,MAX_ROOMS);
 scanf("%d",&numberOfMagicalRooms);
-
-if(numberOfMagicalRooms<2 || numberOfMagicalRooms>8){while(numberOfMagicalRooms<2 || numberOfMagicalRooms>8){
+	
+while(numberOfMagicalRooms<2 || numberOfMagicalRooms>8){
 
 printf("Incorrect input! Please try again.\n");
 
@@ -186,13 +186,11 @@ clearInputBuffer();
 
 printf("Enter number of magical rooms [%d,%d] : ",MIN_ROOMS,MAX_ROOMS);
 
-scanf("%d",&numberOfMagicalRooms);}} 
+scanf("%d",&numberOfMagicalRooms);}
 
 printf("Enter number of wumpuses [%d,%d]      : ",MIN_WUMPUSES,MAX_WUMPUSES);
 
 scanf("%d",&numberOfWumpuses);
-
-if(numberOfWumpuses<1 || numberOfWumpuses>4 || numberOfWumpuses>(numberOfMagicalRooms-1)){
 
 while(numberOfWumpuses<1 || numberOfWumpuses>4 || numberOfWumpuses>(numberOfMagicalRooms-1)){
 
@@ -202,7 +200,7 @@ clearInputBuffer();
 
 printf("Enter number of wumpuses [%d,%d]      : ",MIN_WUMPUSES,MAX_WUMPUSES);
 
-scanf("%d",&numberOfWumpuses);}} 
+scanf("%d",&numberOfWumpuses);} 
 
 printf("Configuration is finished. Good luck with the game play!\n");
 
@@ -301,8 +299,7 @@ printf("\nWhich one will you choose? : ");
 scanf(" %c", &direction);
 
 if(direction1==0 && direction2==1){ 
-	if ((direction != 'n') && (direction != 'N') && (direction != 'e') && (direction != 'E'))
-		{while((direction != 'n') && (direction != 'N') && (direction != 'e') && (direction != 'E'))
+		while((direction != 'n') && (direction != 'N') && (direction != 'e') && (direction != 'E'))
 			{printf("Incorrect input! Please try again.\n");
 
 			clearInputBuffer();
@@ -313,7 +310,7 @@ if(direction1==0 && direction2==1){
 
 	if((direction == 'n') || (direction == 'N')){currentRoomNo = room1;}
 
-	else if((direction == 'e') || (direction == 'E')){currentRoomNo = room2;}}
+	else if((direction == 'e') || (direction == 'E')){currentRoomNo = room2;}
 
 if(direction1==0 && direction2==2){
 	if ((direction != 'n') && (direction != 'N') && (direction != 's') && (direction != 'S'))
@@ -331,6 +328,7 @@ if(direction1==0 && direction2==2){
 	else if((direction == 's') || (direction == 'S')){currentRoomNo = room2;}}
 
 if(direction1==0 && direction2==3){
+	//Need check
 	if ((direction != 'n') && (direction != 'N') && (direction != 'w') && (direction != 'W'))
 		{while((direction != 'n') && (direction != 'N') && (direction != 'w') && (direction != 'W'))
 			{printf("Incorrect input! Please try again.\n");
@@ -361,8 +359,8 @@ if(direction1==1 && direction2==0){
 	else if((direction == 'n') || (direction == 'N')){currentRoomNo = room2;}}
 
 if(direction1==1 && direction2==2){ 
-	if ((direction != 'e') && (direction != 'E') && (direction != 's') && (direction != 'S'))
-		{while((direction != 'e') && (direction != 'E') && (direction != 's') && (direction != 'S'))
+	{
+		while((direction != 'e') && (direction != 'E') && (direction != 's') && (direction != 'S'))
 			{printf("Incorrect input! Please try again.\n");
 
 			clearInputBuffer();
@@ -373,7 +371,7 @@ if(direction1==1 && direction2==2){
 
 	if((direction == 'e') || (direction == 'E')){currentRoomNo = room1;}
 
-	else if((direction == 's') || (direction == 'S')){currentRoomNo = room2;}}
+	else if((direction == 's') || (direction == 'S')){currentRoomNo = room2;}
 
 if(direction1==1 && direction2==3){ 
 	if ((direction != 'e') && (direction != 'E') && (direction != 'w') && (direction != 'W'))
@@ -451,8 +449,7 @@ if(direction1==3 && direction2==0){
 	else if((direction == 'n') || (direction == 'N')){currentRoomNo = room2;}}
 
 if(direction1==3 && direction2==1){ 
-	if ((direction != 'w') && (direction != 'W') && (direction != 'e') && (direction != 'E'))
-		{while((direction != 'w') && (direction != 'W') && (direction != 'e') && (direction != 'E'))
+		while((direction != 'w') && (direction != 'W') && (direction != 'e') && (direction != 'E'))
 			{printf("Incorrect input! Please try again.\n");
 
 			clearInputBuffer();
@@ -463,19 +460,19 @@ if(direction1==3 && direction2==1){
 
 	if((direction != 'w') || (direction != 'W')){currentRoomNo = room1;}
 
-	else if((direction == 'e') || (direction == 'E')){currentRoomNo = room2;}}
+	else if((direction == 'e') || (direction == 'E')){currentRoomNo = room2;}
 
 if(direction1==3 && direction2==2){ 
 
-	if ((direction != 'w') && (direction != 'W') && (direction != 's') && (direction != 'S'))
-		{while((direction != 'w') && (direction != 'W') && (direction != 's') && (direction != 'S'))
+	//if ((direction != 'w') && (direction != 'W') && (direction != 's') && (direction != 'S'))
+		while((direction != 'w') && (direction != 'W') && (direction != 's') && (direction != 'S'))
 			{printf("Incorrect input! Please try again.\n");
 
 			clearInputBuffer();
 
 			printf("Which one will you choose? : ");
 
-			scanf(" %c",&direction);}}
+			scanf(" %c",&direction);}
 
 	if((direction == 'w') || (direction == 'W')){currentRoomNo = room1;}
 
